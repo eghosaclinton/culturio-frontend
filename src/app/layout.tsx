@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
+// import ResizeObserverPolyfill from './ui/components/ResizeObserver'
 import './globals.css'
 
 // const geistSans = Geist({
