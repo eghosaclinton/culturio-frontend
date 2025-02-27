@@ -3,6 +3,7 @@ import { useWindowSize } from 'react-use'
 type ColumnReturn = {
     columnsNum: number
     columnsGutter: number
+    fontSize: number
 }
 
 export function useColumn(): ColumnReturn {
@@ -19,11 +20,19 @@ export function useColumn(): ColumnReturn {
         return 16
     }
 
+    function getFontSize(width: number) {
+        if (width < 768) return 10
+        if (width < 1024) return 14
+        return 16
+    }
+
     const columnsNum = getColumns(width)
     const columnsGutter = getColumnGutter(width)
+    const fontSize = getFontSize(width)
 
     return {
         columnsNum,
         columnsGutter,
+        fontSize,
     }
 }
