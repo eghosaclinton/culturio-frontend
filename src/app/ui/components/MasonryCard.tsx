@@ -1,6 +1,5 @@
 'use client'
 import { Link } from 'next-view-transitions'
-import { motion } from 'motion/react'
 import Image from 'next/image'
 import { Content } from '@/app/utils/types'
 import { useColumn } from '@/app/hooks/useColumn'
@@ -14,11 +13,8 @@ export default function MasonryCard({
 
     return (
         <Link href={`/exhibit/${id}`}>
-            <motion.div
-                // initial={{ opacity: 0 }}
-                // animate={{ opacity: 1 }}
+            <div
                 style={{ fontSize: fontSize }}
-                // transition={{ delay: 0.1, duration: 0.5 }}
                 className="cursor-pointer w-full max-w-[768px]"
             >
                 <div
@@ -37,7 +33,7 @@ export default function MasonryCard({
                         priority={Number(id) < 7}
                     />
                 </div>
-            </motion.div>
+            </div>
         </Link>
     )
 }
