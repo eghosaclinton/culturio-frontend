@@ -1,5 +1,7 @@
+import { ViewTransitions } from 'next-view-transitions'
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
+import { cookies } from 'next/headers'
 import './globals.css'
 
 // const geistSans = Geist({
@@ -17,12 +19,15 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
+    const cookieStore = cookies()
     return (
-        <html lang="en">
-            <body className={`antialiased`}>
-                {children}
-                <Analytics />
-            </body>
-        </html>
+        <ViewTransitions>
+            <html lang="en">
+                <body className={`antialiased`}>
+                    {children}
+                    <Analytics />
+                </body>
+            </html>
+        </ViewTransitions>
     )
 }
