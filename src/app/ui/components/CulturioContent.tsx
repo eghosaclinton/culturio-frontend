@@ -16,7 +16,7 @@ export default function CulturioContent() {
     return (
         <section className="p-3 relative">
             <Masonry
-                className="image-list"
+                itemStyle={{contain: 'layout', breakInside: 'avoid'}}
                 items={content}
                 columnGutter={columnsGutter}
                 columnWidth={300}

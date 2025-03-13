@@ -29,9 +29,18 @@ h6 {
   overflow-wrap: break-word;
 }
 
-.exhibit-img {
-  view-transition-name: demo-title;
-  /* width: fit-content; */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-image-pair(root) {
+  isolation: auto;
+}
+
+::view-transition-group(*) {
+  animation-duration: 0.5s;
 }
 
 @keyframes heartbeat {

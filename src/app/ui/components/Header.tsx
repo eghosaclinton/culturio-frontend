@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Header() {
     return (
         <header className="p-4 shadow-md">
-            <h2 className="flex gap-2 items-center justify-center font-semibold text-xl">
+            <h2 className="flex gap-2 items-center justify-center font-semibold text-2xl">
                 <Image
                     alt="culturio logo"
                     src="/culturio.svg"

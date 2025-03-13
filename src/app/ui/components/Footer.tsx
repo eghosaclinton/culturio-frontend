@@ -10,6 +10,7 @@ export default function Footer() {
                     src="/naija.svg"
                     width={25}
                     height={25}
+                    priority={true}
                 />
             </span>{' '}
             by a1s0sa

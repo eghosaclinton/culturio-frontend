@@ -1,13 +1,10 @@
 import { ViewTransitions } from 'next-view-transitions'
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
-import { cookies } from 'next/headers'
 import './globals.css'
+import { Work_Sans } from 'next/font/google'
 
-// const geistSans = Geist({
-//     variable: '--font-geist-sans',
-//     subsets: ['latin'],
-// })
+const workSans = Work_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
     title: 'culturio',
@@ -19,11 +16,10 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
-    const cookieStore = cookies()
     return (
         <ViewTransitions>
             <html lang="en">
-                <body className={`antialiased`}>
+                <body className={`${workSans.className} antialiased`}>
                     {children}
                     <Analytics />
                 </body>

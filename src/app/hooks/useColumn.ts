@@ -4,6 +4,7 @@ type ColumnReturn = {
     columnsNum: number
     columnsGutter: number
     fontSize: number
+    width: number
 }
 
 export function useColumn(): ColumnReturn {
@@ -34,5 +35,6 @@ export function useColumn(): ColumnReturn {
         columnsNum,
         columnsGutter,
         fontSize,
+        width
     }
 }

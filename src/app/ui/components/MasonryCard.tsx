@@ -19,15 +19,22 @@ export default function MasonryCard({
                 // animate={{ opacity: 1 }}
                 style={{ fontSize: fontSize }}
                 // transition={{ delay: 0.1, duration: 0.5 }}
-                className="p-3 cursor-pointer w-full max-w-[768px]"
+                className="cursor-pointer w-full max-w-[768px]"
             >
-                <div className="bg-white exhibit-img rounded-lg shadow-lg overflow-hidden">
+                <div
+                    className="bg-white rounded-lg shadow-lg overflow-hidden"
+                    style={{
+                        viewTransitionName: `image-${id}`,
+                        contain: 'layout'
+                    }}
+                >
                     <Image
                         src={media_url}
                         alt={title}
-                        className="w-full h-auto object-cover"
+                        className={`w-full h-auto object-cover`}
                         width={100}
                         height={100}
+                        priority={Number(id) < 7}
                     />
                 </div>
             </motion.div>
